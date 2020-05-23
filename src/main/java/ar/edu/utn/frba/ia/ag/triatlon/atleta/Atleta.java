@@ -33,8 +33,8 @@ public class Atleta<main> extends Individuo {
 
     @Override
     public String toString() {
-        String descripcion = "\nAptitud: %3.2f\nCaracteristicas: %s\nEstadisticas: %s";
-        return String.format(descripcion,aptitud(),this.descripcionCaracterísticas(),this.descripcionEstadisticas());
+        String descripcion = "\nAptitud: %3.2f\nCaracteristicas: %s\nEstadisticas: %s\nCosto: $ %5.2f";
+        return String.format(descripcion,aptitud(),this.descripcionCaracterísticas(),this.descripcionEstadisticas(),this.costoAtleta());
     }
 
     private String descripcionEstadisticas() {

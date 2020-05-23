@@ -10,7 +10,7 @@ public class MejorAtletaTriatlon {
     public static void main(String[] args) {
         AlgoritmoGenetico mejorAtletaTriatlon = new AlgoritmoGenetico(new ConfiguracionTriatlon(), Atleta.class);
         Atleta mejorAtleta = (Atleta) mejorAtletaTriatlon.ejecutar();
-        Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("\nIndividuo final: " + mejorAtleta.toString());
+        Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo final: " + mejorAtleta.toString());
         System.out.println("------------------------------------------------------------------------");
     }
 

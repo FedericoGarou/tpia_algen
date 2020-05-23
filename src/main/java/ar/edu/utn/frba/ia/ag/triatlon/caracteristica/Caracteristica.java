@@ -2,7 +2,7 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public abstract class Caracteristica {
 
-    private Double valor;
+    protected Double valor;
 
     private Integer ponderacion;
 
@@ -27,7 +27,7 @@ public abstract class Caracteristica {
 
     @Override
     public String toString() {
-        String descripcion = "%s: valor=%3.2f";
+        String descripcion = "%s: %3.2f";
         return String.format(descripcion,this.getClass().getSimpleName(),valor);
     }
 

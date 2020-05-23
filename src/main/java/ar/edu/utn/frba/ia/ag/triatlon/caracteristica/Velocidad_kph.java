@@ -18,4 +18,10 @@ public class Velocidad_kph extends Caracteristica {
         return velocidad;
     }
 
+    @Override
+    public String toString() {
+        String descripcion = "Velocidad: %3.2f km/h";
+        return String.format(descripcion,super.valor);
+    }
+
 }

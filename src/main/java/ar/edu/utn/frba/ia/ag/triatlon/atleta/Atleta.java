@@ -1,6 +1,7 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.atleta;
 
 import main.java.ar.edu.utn.frba.ia.ag.Individuo;
+import main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadCarreraPie;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadCiclismo;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadNatacion;
@@ -130,8 +131,7 @@ public class Atleta<main> extends Individuo {
      * FACTOR = SUELDO_MAXIMO / COSTO_NORMALIZADO_MAXIMO = 1.5
      */
     private double sueldoAnualEnDolares() {
-        double factorConversion = 1.5D;
-        return this.costoAtleta()* factorConversion;
+        return this.costoAtleta()* ParametrosValoracion.FACTOR_CONVERSION_SALARIO;
     }
 
     public List<Caracteristica> getCaracterísticas() {

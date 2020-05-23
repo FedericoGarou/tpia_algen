@@ -10,6 +10,7 @@ public class MejorAtletaTriatlon {
 
     public static void main(String[] args) {
         Locale.setDefault(new Locale("es","AR"));
+        ParametrosValoracion.informar();
         AlgoritmoGenetico mejorAtletaTriatlon = new AlgoritmoGenetico(new ConfiguracionTriatlon(), Atleta.class);
         Atleta mejorAtleta = (Atleta) mejorAtletaTriatlon.ejecutar();
         Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo final: " + mejorAtleta.toString());

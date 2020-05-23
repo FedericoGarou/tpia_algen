@@ -1,10 +1,10 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_VELOCIDAD;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_VELODIDAD;
+
 //Velocidad medida en KM/H
 public class Velocidad extends Caracteristica {
-
-    private static final Integer PONDERACION_VELODIDAD = 20;
-    private static final Integer COSTO_VELOCIDAD = 16;
 
     public Velocidad() {
         super(PONDERACION_VELODIDAD, COSTO_VELOCIDAD);
@@ -25,4 +25,7 @@ public class Velocidad extends Caracteristica {
         return String.format(descripcion,super.valor);
     }
 
+    public static Double limiteSuperior() {
+        return LIMITE_SUPERIOR;
+    }
 }

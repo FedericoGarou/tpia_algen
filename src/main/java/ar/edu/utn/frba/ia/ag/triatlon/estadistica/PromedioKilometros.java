@@ -1,9 +1,9 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_PROMEDIO_KILOMETROS;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_PROMEDIO_KILOMETROS;
+
 public class PromedioKilometros extends Estadistica {
-    
-    private static final Integer PONDERACION_PROMEDIO_KILOMETROS = 45;
-    private static final Integer COSTO_PROMEDIO_KILOMETROS = 36;
 
     public PromedioKilometros(){
         super(PONDERACION_PROMEDIO_KILOMETROS, COSTO_PROMEDIO_KILOMETROS);
@@ -24,4 +24,7 @@ public class PromedioKilometros extends Estadistica {
         return String.format(descripcion,super.valor);
     }
 
+    public static Double limiteSuperior() {
+        return LIMITE_SUPERIOR;
+    }
 }

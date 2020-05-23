@@ -1,12 +1,12 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_PORCENTAJE_PODIOS;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_PORCENTAJE_PODIOS;
+
 public class PorcentajePodios extends Estadistica {
 
-    private static final Integer PONDERACION_PORCENTAJE_PODIOS = 95;
-    private static final Integer COSTO_PORCENTAJE_PODIOS = 76;
-
     public PorcentajePodios(){
-        super(PONDERACION_PORCENTAJE_PODIOS,COSTO_PORCENTAJE_PODIOS);
+        super(PONDERACION_PORCENTAJE_PODIOS, COSTO_PORCENTAJE_PODIOS);
     }
 
     private static final Double LIMITE_SUPERIOR = 80.0D;
@@ -16,6 +16,10 @@ public class PorcentajePodios extends Estadistica {
         PorcentajePodios porcentajePodios = new PorcentajePodios();
         porcentajePodios.setValorEntre(LIMITE_INFERIOR,LIMITE_SUPERIOR);
         return porcentajePodios;
+    }
+
+    public static Double limiteSuperior() {
+        return LIMITE_SUPERIOR;
     }
 
 }

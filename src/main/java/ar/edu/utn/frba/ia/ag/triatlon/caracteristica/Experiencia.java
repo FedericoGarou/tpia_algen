@@ -1,8 +1,9 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_EXPERIENCIA;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_EXPERIENCIA;
+
 public class Experiencia extends Caracteristica {
-    private static final Integer PONDERACION_EXPERIENCIA = 85;
-    private static final Integer COSTO_EXPERIENCIA = 65;
 
     public Experiencia() {
         super(PONDERACION_EXPERIENCIA, COSTO_EXPERIENCIA);

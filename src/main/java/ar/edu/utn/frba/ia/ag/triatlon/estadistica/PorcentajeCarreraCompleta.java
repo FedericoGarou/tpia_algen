@@ -1,9 +1,9 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_PORCENTAJE_CARRERA_COMPLETA;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_PORCENTAJE_CARRERA_COMPLETA;
+
 public class PorcentajeCarreraCompleta extends Estadistica {
-    
-    private static final Integer PONDERACION_PORCENTAJE_CARRERA_COMPLETA = 40;
-    private static final Integer COSTO_PORCENTAJE_CARRERA_COMPLETA = 25;
 
     public PorcentajeCarreraCompleta(){
         super(PONDERACION_PORCENTAJE_CARRERA_COMPLETA, COSTO_PORCENTAJE_CARRERA_COMPLETA);

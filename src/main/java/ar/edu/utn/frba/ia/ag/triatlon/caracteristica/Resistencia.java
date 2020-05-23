@@ -1,12 +1,12 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_RESISTENCIA;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_RESISTENCIA;
+
 public class Resistencia extends Caracteristica {
 
-    private static final Integer PONDERACION_RESISTENCIA = 55;
-    private static final Integer COSTO_RESISTENCIA = 20;
-
     public Resistencia() {
-        super(PONDERACION_RESISTENCIA,COSTO_RESISTENCIA);
+        super(PONDERACION_RESISTENCIA, COSTO_RESISTENCIA);
     }
 
     private static final Double LIMITE_SUPERIOR = 100.0D;

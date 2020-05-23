@@ -1,9 +1,9 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
-public class CapacidadNatacion extends Caracteristica {
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.COSTO_CAPACIDAD_NATACION;
+import static main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion.PONDERACION_CAPACIDAD_NATACION;
 
-    private static final Integer PONDERACION_CAPACIDAD_NATACION = 70;
-    private static final Integer COSTO_CAPACIDAD_NATACION = 56;
+public class CapacidadNatacion extends Caracteristica {
 
     public CapacidadNatacion() {
         super(PONDERACION_CAPACIDAD_NATACION, COSTO_CAPACIDAD_NATACION);

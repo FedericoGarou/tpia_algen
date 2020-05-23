@@ -18,13 +18,18 @@ import main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica.PromedioKilometros;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Atleta extends Individuo {
+public class Atleta<main> extends Individuo {
 
     private List<Caracteristica> características = new ArrayList<Caracteristica>();
 
     private List<Estadistica> estadisticas = new ArrayList<Estadistica>();
 
     public Atleta() {}
+
+    public static void main(String[] args) {
+        Individuo atleta = new Atleta().generarRandom();
+        System.out.println(atleta);
+    }
 
     @Override
     public String toString() {

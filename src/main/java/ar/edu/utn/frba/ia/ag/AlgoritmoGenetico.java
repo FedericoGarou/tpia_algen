@@ -94,7 +94,7 @@ public class AlgoritmoGenetico {
 			Logger.getLogger(
 					Logger.GLOBAL_LOGGER_NAME).log(
 							Level.SEVERE,
-							"Promedio: "
+							"\nPromedio: "
 									+ aptitudPromedio
 									+ " // Mejor Individuo "
 									+ individuo.toString());
@@ -104,10 +104,10 @@ public class AlgoritmoGenetico {
 					+ this.estado.getPeoresIndividuos().get(i).aptitud());
 		}
 		
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo mas Apto: " + this.individuos.get(0).toString());
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("\nIndividuo mas Apto: " + this.individuos.get(0).toString());
 		
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Cantidad de Veces que muto: " + this.estado.getCantMutaciones() + " / " + this.estado.getCorridas());
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo Campeon: " + this.estado.getMejorIndividuo());
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Peor Individuo: " + this.estado.getPeorIndividuo());
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("\nCantidad de Veces que muto: " + this.estado.getCantMutaciones() + " / " + this.estado.getCorridas());
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("\nIndividuo Campeon: " + this.estado.getMejorIndividuo());
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("\nPeor Individuo: " + this.estado.getPeorIndividuo());
 	}
 }

@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public class Velocidad_kph extends Caracteristica {
 
-    private static final Integer PONDERACION_VELODIDAD = 1;
-    private static final Integer COSTO_VELOCIDAD = 1;
+    private static final Integer PONDERACION_VELODIDAD = 6;
+    private static final Integer COSTO_VELOCIDAD = 5;
 
     public Velocidad_kph() {
         super(PONDERACION_VELODIDAD, COSTO_VELOCIDAD);

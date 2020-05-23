@@ -1,6 +1,6 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
-public class Característica {
+public abstract class Caracteristica {
 
     private Double valor;
 
@@ -8,12 +8,7 @@ public class Característica {
 
     private Integer costoBase;
 
-    public Característica(Double valor){
-        this();
-        this.valor = valor;
-    }
-
-    public Característica(Integer ponderacion, Integer costoBase) {
+    public Caracteristica(Integer ponderacion, Integer costoBase) {
         this.ponderacion = ponderacion;
         this.costoBase = costoBase;
     }
@@ -24,6 +19,16 @@ public class Característica {
 
     public Double costo(){
         return this.valor * this.costoBase;
+    }
+
+    protected void setValorEntre(Double limiteInferior, Double limiteSuperior){
+        this.valor = Math.random() * (limiteSuperior - limiteInferior) + limiteInferior;
+    }
+
+    @Override
+    public String toString() {
+        String descripcion = "%s: valor=%3.2f";
+        return String.format(descripcion,this.getClass().getSimpleName(),valor);
     }
 
 }

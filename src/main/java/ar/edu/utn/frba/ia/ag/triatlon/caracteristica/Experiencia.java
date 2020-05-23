@@ -1,10 +1,20 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
-public class Resistencia extends Característica{
-    private static final Integer PONDERACION_RESISTENCIA = 1;
-    private static final Integer COSTO_RESISTENCIA = 1;
+public class Experiencia extends Caracteristica {
+    private static final Integer PONDERACION_EXPERIENCIA = 1;
+    private static final Integer COSTO_EXPERIENCIA = 1;
 
-    public Resistencia() {
-        super(PONDERACION_RESISTENCIA,COSTO_RESISTENCIA);
+    public Experiencia() {
+        super(PONDERACION_EXPERIENCIA, COSTO_EXPERIENCIA);
     }
+
+    private static final Double LIMITE_SUPERIOR = 1.0D;
+    private static final Double LIMITE_INFERIOR = 1.0D;
+
+    public static Experiencia randomOf() {
+        Experiencia experiencia = new Experiencia();
+        experiencia.setValorEntre(LIMITE_INFERIOR,LIMITE_SUPERIOR);
+        return experiencia;
+    }
+
 }

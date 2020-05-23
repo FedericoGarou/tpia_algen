@@ -1,12 +1,21 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
-public class PorcentajePodios extends Estadistica {
+public class PorcentajeCarreraCompleta extends Estadistica {
     
-    private static final Integer PONDERACION_PORCENTAJE_PODIOS = 1;
-    private static final Integer COSTO_PORCENTAJE_PODIOS = 1;
+    private static final Integer PONDERACION_PORCENTAJE_CARRERA_COMPLETA = 1;
+    private static final Integer COSTO_PORCENTAJE_CARRERA_COMPLETA = 1;
 
-    public PorcentajePodios(){
-        super(PONDERACION_PORCENTAJE_PODIOS,COSTO_PORCENTAJE_PODIOS);
+    public PorcentajeCarreraCompleta(){
+        super(PONDERACION_PORCENTAJE_CARRERA_COMPLETA, COSTO_PORCENTAJE_CARRERA_COMPLETA);
+    }
+
+    private static final Double LIMITE_SUPERIOR = 1.0D;
+    private static final Double LIMITE_INFERIOR = 1.0D;
+
+    public static PorcentajeCarreraCompleta randomOf() {
+        PorcentajeCarreraCompleta porcentajeCarreraCompleta = new PorcentajeCarreraCompleta();
+        porcentajeCarreraCompleta.setValorEntre(LIMITE_INFERIOR,LIMITE_SUPERIOR);
+        return porcentajeCarreraCompleta;
     }
 
 }

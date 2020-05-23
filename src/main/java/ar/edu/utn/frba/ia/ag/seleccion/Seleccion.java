@@ -1,5 +1,6 @@
 package main.java.ar.edu.utn.frba.ia.ag.seleccion;
 
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public abstract class Seleccion {
 		List<Individuo> copias = new ArrayList<Individuo>();
 		
 		for (Individuo individuo : individuos) {
-			for (int i = 0; i < Math.round(individuo.aptitud() * individuos.size() / estado.getTotalUltimaAptitud()); i++) {
+			for (int i = 0; i < Math.ceil(individuo.aptitud() * individuos.size() / estado.getTotalUltimaAptitud()); i++) {
 				copias.add(individuo.clone());
 			}
 		}
@@ -38,7 +39,7 @@ public abstract class Seleccion {
 		
 		return copias;
 	}
-	
+
 	protected abstract List<Individuo> seleccion(List<Individuo> individuos, Estado estado);
 	
 }

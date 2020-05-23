@@ -1,11 +1,21 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
-public class Velocidad extends Característica{
-    private static final Integer PONDERACION_VELODIDAD = 1;
-    private static final Integer COSTO_VELOCIDAD = 1;
+public class CapacidadNatacion extends Caracteristica {
 
-    public Velocidad() {
-        super(PONDERACION_VELODIDAD, COSTO_VELOCIDAD);
+    private static final Integer PONDERACION_CAPACIDAD_NATACION = 1;
+    private static final Integer COSTO_CAPACIDAD_NATACION = 1;
+
+    public CapacidadNatacion() {
+        super(PONDERACION_CAPACIDAD_NATACION, COSTO_CAPACIDAD_NATACION);
     }
-    
+
+    private static final Double LIMITE_SUPERIOR = 1.0D;
+    private static final Double LIMITE_INFERIOR = 1.0D;
+
+    public static CapacidadNatacion randomOf() {
+        CapacidadNatacion capacidadNatacion = new CapacidadNatacion();
+        capacidadNatacion.setValorEntre(LIMITE_INFERIOR,LIMITE_SUPERIOR);
+        return capacidadNatacion;
+    }
+
 }

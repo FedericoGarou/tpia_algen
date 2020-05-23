@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
 public class PorcentajeAsistencia extends Estadistica {
     
-    private static final Integer PONDERACION_PORCENTAJE_ASISTENCIA = 6;
-    private static final Integer COSTO_PORCENTAJE_ASISTENCIA = 3;
+    private static final Integer PONDERACION_PORCENTAJE_ASISTENCIA = 20;
+    private static final Integer COSTO_PORCENTAJE_ASISTENCIA = 15;
 
     public PorcentajeAsistencia(){
         super(PONDERACION_PORCENTAJE_ASISTENCIA, COSTO_PORCENTAJE_ASISTENCIA);

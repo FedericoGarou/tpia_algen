@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public class Mentalidad extends Caracteristica {
 
-    private static final Integer PONDERACION_MENTALIDAD = 10;
-    private static final Integer COSTO_MENTALIDAD = 9;
+    private static final Integer PONDERACION_MENTALIDAD = 80;
+    private static final Integer COSTO_MENTALIDAD = 64;
 
     public Mentalidad() {
         super(PONDERACION_MENTALIDAD, COSTO_MENTALIDAD);

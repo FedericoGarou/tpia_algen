@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public class CapacidadCarreraPie extends Caracteristica {
 
-    private static final Integer PONDERACION_CAPACIDAD_CARRERA_PIE = 4;
-    private static final Integer COSTO_CAPACIDAD_CARRERA_PIE = 4;
+    private static final Integer PONDERACION_CAPACIDAD_CARRERA_PIE = 70;
+    private static final Integer COSTO_CAPACIDAD_CARRERA_PIE = 45;
 
     public CapacidadCarreraPie() {
         super(PONDERACION_CAPACIDAD_CARRERA_PIE, COSTO_CAPACIDAD_CARRERA_PIE);

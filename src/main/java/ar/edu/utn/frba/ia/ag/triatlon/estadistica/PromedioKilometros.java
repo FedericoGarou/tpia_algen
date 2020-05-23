@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica;
 
 public class PromedioKilometros extends Estadistica {
     
-    private static final Integer PONDERACION_PROMEDIO_KILOMETROS = 8;
-    private static final Integer COSTO_PROMEDIO_KILOMETROS = 7;
+    private static final Integer PONDERACION_PROMEDIO_KILOMETROS = 45;
+    private static final Integer COSTO_PROMEDIO_KILOMETROS = 36;
 
     public PromedioKilometros(){
         super(PONDERACION_PROMEDIO_KILOMETROS, COSTO_PROMEDIO_KILOMETROS);
@@ -16,6 +16,12 @@ public class PromedioKilometros extends Estadistica {
         PromedioKilometros promedioKilometros = new PromedioKilometros();
         promedioKilometros.setValorEntre(LIMITE_INFERIOR,LIMITE_SUPERIOR);
         return promedioKilometros;
+    }
+
+    @Override
+    public String toString() {
+        String descripcion = "Km promedio: %3.2f Km";
+        return String.format(descripcion,super.valor);
     }
 
 }

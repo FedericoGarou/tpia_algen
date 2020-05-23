@@ -85,12 +85,12 @@ public class AlgoritmoGenetico {
 	}
 	
 	private void loggearEstado() {
-		
+
+		/*
 		for (int i = 0; i < this.estado.getMejoresIndividuos().size(); i++) {
 			
 			Individuo individuo = this.estado.getMejoresIndividuos().get(i);
 			Double aptitudPromedio = this.estado.getAptitudesPromedio().get(i);
-			
 			Logger.getLogger(
 					Logger.GLOBAL_LOGGER_NAME).log(
 							Level.SEVERE,
@@ -99,14 +99,12 @@ public class AlgoritmoGenetico {
 									+ "\n Mejor Individuo "
 									+ individuo.toString()
 									+ "\n" );
-
-			/*
 				System.out.println(this.estado.getMejoresIndividuos().get(i).aptitud() + "	"
 				+ this.estado.getAptitudesPromedio().get(i) + "	"
 				+ this.estado.getPeoresIndividuos().get(i).aptitud());
-			*/
 		}
-		
+		*/
+
 		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo mas Apto: " + this.individuos.get(0).toString() + "\n");
 		
 		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Cantidad de Veces que muto: " + this.estado.getCantMutaciones() + " / " + this.estado.getCorridas() + "\n");

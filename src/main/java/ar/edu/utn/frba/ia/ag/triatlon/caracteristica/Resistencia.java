@@ -2,8 +2,8 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public class Resistencia extends Caracteristica {
 
-    private static final Integer PONDERACION_RESISTENCIA = 9;
-    private static final Integer COSTO_RESISTENCIA = 8;
+    private static final Integer PONDERACION_RESISTENCIA = 55;
+    private static final Integer COSTO_RESISTENCIA = 20;
 
     public Resistencia() {
         super(PONDERACION_RESISTENCIA,COSTO_RESISTENCIA);

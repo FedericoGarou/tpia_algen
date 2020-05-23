@@ -8,7 +8,7 @@ import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Caracteristica;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Experiencia;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Mentalidad;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Resistencia;
-import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Velocidad_kph;
+import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.Velocidad;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica.Estadistica;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica.PorcentajeAsistencia;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.estadistica.PorcentajeCarreraCompleta;
@@ -26,35 +26,10 @@ public class Atleta<main> extends Individuo {
 
     public Atleta() {}
 
-    public static void main(String[] args) {
-        Individuo atleta = new Atleta().generarRandom();
-        System.out.println(atleta);
-    }
-
     @Override
     public String toString() {
-        String descripcion = "\nAptitud: %3.2f\nCaracteristicas: %s\nEstadisticas: %s\nCosto: $ %5.2f";
-        return String.format(descripcion,aptitud(),this.descripcionCaracterísticas(),this.descripcionEstadisticas(),this.costoAtleta());
-    }
-
-    private String descripcionEstadisticas() {
-        StringBuilder sbEstadisticas = new StringBuilder();
-        String separador = "";
-        for(Estadistica estadistica : estadisticas){
-            sbEstadisticas.append(separador).append(estadistica.toString());
-            separador = " - ";
-        }
-        return sbEstadisticas.toString();
-    }
-
-    private String descripcionCaracterísticas() {
-        StringBuilder sbCaracteristicas = new StringBuilder();
-        String separador = "";
-        for(Caracteristica caracteristica : características){
-            sbCaracteristicas.append(separador).append(caracteristica.toString());
-            separador = " - ";
-        }
-        return sbCaracteristicas.toString();
+        String descripcion = "\nAptitud: %,6.2f\nCaracteristicas: %s\nEstadisticas: %s\nCosto: U$S %,6.2f anuales";
+        return String.format(descripcion,aptitud(),descripcionCaracterísticas(),descripcionEstadisticas(), sueldoAnualEnDolares());
     }
 
     @Override
@@ -114,13 +89,49 @@ public class Atleta<main> extends Individuo {
     }
 
     private void generarCaracteristicasRandom(){
-        características.add(Velocidad_kph.randomOf());
+        características.add(Velocidad.randomOf());
         características.add(Resistencia.randomOf());
         características.add(Mentalidad.randomOf());
         características.add(Experiencia.randomOf());
         características.add(CapacidadNatacion.randomOf());
         características.add(CapacidadCiclismo.randomOf());
         características.add(CapacidadCarreraPie.randomOf());
+    }
+
+    private String descripcionEstadisticas() {
+        StringBuilder sbEstadisticas = new StringBuilder();
+        String separador = "";
+        for(Estadistica estadistica : estadisticas){
+            sbEstadisticas.append(separador).append(estadistica.toString());
+            separador = " - ";
+        }
+        return sbEstadisticas.toString();
+    }
+
+    private String descripcionCaracterísticas() {
+        StringBuilder sbCaracteristicas = new StringBuilder();
+        String separador = "";
+        for(Caracteristica caracteristica : características){
+            sbCaracteristicas.append(separador).append(caracteristica.toString());
+            separador = " - ";
+        }
+        return sbCaracteristicas.toString();
+    }
+
+    /**
+     * Este cálculo se hace tomando el dato de que el 95% de los triatletas ganan U$D 50.000 anuales
+     * Por lo que tomamos un máximo sueldo de U$D 75.000 (ignorando a los triatletas de elite)
+     * Fuente: https://www.triatloners.com/los-triatletas-mejores-pagos-el-95-gano-menos-de-50k/
+     * Nota: El artículo es del 2015
+     *
+     * Considerando que el mejor atleta posible (Con todas sus características y estadísticas al máximo)
+     * puede tener 50.000 puntos de costo se obtiene un factor de conversión dado por:
+     *
+     * FACTOR = SUELDO_MAXIMO / COSTO_NORMALIZADO_MAXIMO = 1.5
+     */
+    private double sueldoAnualEnDolares() {
+        double factorConversion = 1.5D;
+        return this.costoAtleta()* factorConversion;
     }
 
     public List<Caracteristica> getCaracterísticas() {

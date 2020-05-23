@@ -27,7 +27,7 @@ public abstract class Caracteristica {
 
     @Override
     public String toString() {
-        String descripcion = "%s: %3.2f";
+        String descripcion = "%s: %3.2f%%";
         return String.format(descripcion,this.getClass().getSimpleName(),valor);
     }
 

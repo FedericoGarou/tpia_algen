@@ -1,8 +1,8 @@
 package main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica;
 
 public class Experiencia extends Caracteristica {
-    private static final Integer PONDERACION_EXPERIENCIA = 8;
-    private static final Integer COSTO_EXPERIENCIA = 10;
+    private static final Integer PONDERACION_EXPERIENCIA = 85;
+    private static final Integer COSTO_EXPERIENCIA = 65;
 
     public Experiencia() {
         super(PONDERACION_EXPERIENCIA, COSTO_EXPERIENCIA);

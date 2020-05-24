@@ -150,4 +150,7 @@ public class Atleta<main> extends Individuo {
         this.estadisticas = estadisticas;
     }
 
+    public String aptitudSobreIdeal() {
+        return String.format("Aptitud respecto al ideal: %2.2f%% de coincidencia con el ideal %n", this.aptitud()/ParametrosValoracion.maximoAptitud()*100);
+    }
 }

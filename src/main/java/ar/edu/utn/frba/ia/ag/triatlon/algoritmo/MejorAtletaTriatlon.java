@@ -14,6 +14,7 @@ public class MejorAtletaTriatlon {
         AlgoritmoGenetico mejorAtletaTriatlon = new AlgoritmoGenetico(new ConfiguracionTriatlon(), Atleta.class);
         Atleta mejorAtleta = (Atleta) mejorAtletaTriatlon.ejecutar();
         Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo final: " + mejorAtleta.toString());
+        Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe(mejorAtleta.aptitudSobreIdeal());
         System.out.println("------------------------------------------------------------------------");
     }
 

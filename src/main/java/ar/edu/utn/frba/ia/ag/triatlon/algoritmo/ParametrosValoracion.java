@@ -8,40 +8,42 @@ import java.util.logging.Logger;
 
 public class ParametrosValoracion {
 
-    public static final Integer PONDERACION_VELODIDAD = 20;
-    public static final Integer COSTO_VELOCIDAD = 16;
+    private static LectorPropiedades propiedades = new LectorPropiedades();
 
-    public static final Integer PONDERACION_RESISTENCIA = 55;
-    public static final Integer COSTO_RESISTENCIA = 20;
+    public static final Integer PONDERACION_VELODIDAD = propiedades.leerPonderacion("velodidad.ponderacion");
+    public static final Integer COSTO_VELOCIDAD = propiedades.leerCosto("velocidad.costo");
 
-    public static final Integer PONDERACION_MENTALIDAD = 80;
-    public static final Integer COSTO_MENTALIDAD = 64;
+    public static final Integer PONDERACION_RESISTENCIA = propiedades.leerPonderacion("resistencia.ponderacion");
+    public static final Integer COSTO_RESISTENCIA = propiedades.leerCosto("resistencia.costo");
 
-    public static final Integer PONDERACION_EXPERIENCIA = 85;
-    public static final Integer COSTO_EXPERIENCIA = 65;
+    public static final Integer PONDERACION_MENTALIDAD = propiedades.leerPonderacion("mentalidad.ponderacion");
+    public static final Integer COSTO_MENTALIDAD = propiedades.leerCosto("mentalidad.costo");
 
-    public static final Integer PONDERACION_CAPACIDAD_NATACION = 70;
-    public static final Integer COSTO_CAPACIDAD_NATACION = 56;
+    public static final Integer PONDERACION_EXPERIENCIA = propiedades.leerPonderacion("experiencia.ponderacion");
+    public static final Integer COSTO_EXPERIENCIA = propiedades.leerCosto("experiencia.costo");
 
-    public static final Integer PONDERACION_CAPACIDAD_CICLISMO = 70;
-    public static final Integer COSTO_CAPACIDAD_CICLISMO = 52;
+    public static final Integer PONDERACION_CAPACIDAD_NATACION = propiedades.leerPonderacion("capacidadNatacion.ponderacion");
+    public static final Integer COSTO_CAPACIDAD_NATACION = propiedades.leerCosto("capacidadNatacion.costo");
 
-    public static final Integer PONDERACION_CAPACIDAD_CARRERA_PIE = 70;
-    public static final Integer COSTO_CAPACIDAD_CARRERA_PIE = 45;
+    public static final Integer PONDERACION_CAPACIDAD_CICLISMO = propiedades.leerPonderacion("capacidadCiclismo.ponderacion");
+    public static final Integer COSTO_CAPACIDAD_CICLISMO = propiedades.leerCosto("capacidadCiclismo.costo");
 
-    public static final Integer PONDERACION_PROMEDIO_KILOMETROS = 45;
-    public static final Integer COSTO_PROMEDIO_KILOMETROS = 36;
+    public static final Integer PONDERACION_CAPACIDAD_CARRERA_PIE = propiedades.leerPonderacion("capacidadCarreraPie.ponderacion");
+    public static final Integer COSTO_CAPACIDAD_CARRERA_PIE = propiedades.leerCosto("capacidadCarreraPie.costo");
 
-    public static final Integer PONDERACION_PORCENTAJE_PODIOS = 95;
-    public static final Integer COSTO_PORCENTAJE_PODIOS = 76;
+    public static final Integer PONDERACION_PROMEDIO_KILOMETROS = propiedades.leerPonderacion("promedioKilometros.ponderacion");
+    public static final Integer COSTO_PROMEDIO_KILOMETROS = propiedades.leerCosto("promedioKilometros.costo");
 
-    public static final Integer PONDERACION_PORCENTAJE_CARRERA_COMPLETA = 40;
-    public static final Integer COSTO_PORCENTAJE_CARRERA_COMPLETA = 25;
+    public static final Integer PONDERACION_PORCENTAJE_PODIOS = propiedades.leerPonderacion("porcentajePodios.ponderacion");
+    public static final Integer COSTO_PORCENTAJE_PODIOS = propiedades.leerCosto("porcentajePodios.costo");
 
-    public static final Integer PONDERACION_PORCENTAJE_ASISTENCIA = 20;
-    public static final Integer COSTO_PORCENTAJE_ASISTENCIA = 15;
+    public static final Integer PONDERACION_PORCENTAJE_CARRERA_COMPLETA = propiedades.leerPonderacion("porcentajeCarreraCompleta.ponderacion");
+    public static final Integer COSTO_PORCENTAJE_CARRERA_COMPLETA = propiedades.leerCosto("porcentajeCarreraCompleta.costo");
 
-    public static final Double FACTOR_CONVERSION_SALARIO = 1.5D;
+    public static final Integer PONDERACION_PORCENTAJE_ASISTENCIA = propiedades.leerPonderacion("porcentajeAsistencia.ponderacion");
+    public static final Integer COSTO_PORCENTAJE_ASISTENCIA = propiedades.leerCosto("porcentajeAsistencia.costo");
+
+    public static final Double FACTOR_CONVERSION_SALARIO = propiedades.leerDouble("factorConversionSalario");;
 
     private static final String SALTO_LINEA = "\n";
     private static final String TAB = "\t";
@@ -109,7 +111,7 @@ public class ParametrosValoracion {
         return String.format("Máximo salario anual en dólares: U$D %,6.2f anuales"+SALTO_LINEA,maximoSalarioAnualEnDolares());
     }
 
-    private static Double maximoAptitud() {
+    public static Double maximoAptitud() {
         return maximoValoracionPorCaracteristicas() + maximoValoracionPorEstadisticas() - maximoCosto();
     }
 

@@ -102,20 +102,16 @@ public class Atleta<main> extends Individuo {
 
     private String descripcionEstadisticas() {
         StringBuilder sbEstadisticas = new StringBuilder();
-        String separador = "";
         for(Estadistica estadistica : estadisticas){
-            sbEstadisticas.append(separador).append(estadistica.toString());
-            separador = " - ";
+            sbEstadisticas.append("\n\t").append(estadistica.toString());
         }
         return sbEstadisticas.toString();
     }
 
     private String descripcionCaracterísticas() {
         StringBuilder sbCaracteristicas = new StringBuilder();
-        String separador = "";
         for(Caracteristica caracteristica : características){
-            sbCaracteristicas.append(separador).append(caracteristica.toString());
-            separador = " - ";
+            sbCaracteristicas.append("\n\t").append(caracteristica.toString());
         }
         return sbCaracteristicas.toString();
     }

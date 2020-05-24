@@ -1,5 +1,7 @@
 package main.java.ar.edu.utn.frba.ia.ag;
 
+import main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.Reporte;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -85,30 +87,9 @@ public class AlgoritmoGenetico {
 	}
 	
 	private void loggearEstado() {
-
-		/*
-		for (int i = 0; i < this.estado.getMejoresIndividuos().size(); i++) {
-			
-			Individuo individuo = this.estado.getMejoresIndividuos().get(i);
-			Double aptitudPromedio = this.estado.getAptitudesPromedio().get(i);
-			Logger.getLogger(
-					Logger.GLOBAL_LOGGER_NAME).log(
-							Level.SEVERE,
-							"\nPromedio: "
-									+ aptitudPromedio
-									+ "\n Mejor Individuo "
-									+ individuo.toString()
-									+ "\n" );
-				System.out.println(this.estado.getMejoresIndividuos().get(i).aptitud() + "	"
-				+ this.estado.getAptitudesPromedio().get(i) + "	"
-				+ this.estado.getPeoresIndividuos().get(i).aptitud());
-		}
-		*/
-
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo mas Apto: " + this.individuos.get(0).toString() + "\n");
-		
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Cantidad de Veces que muto: " + this.estado.getCantMutaciones() + " / " + this.estado.getCorridas() + "\n");
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Individuo Campeon: " + this.estado.getMejorIndividuo() + "\n");
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe("Peor Individuo: " + this.estado.getPeorIndividuo() + "\n");
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe(Reporte.enmarcar("Individuo mas Apto: " + this.individuos.get(0).toString()));
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe(Reporte.enmarcar("Cantidad de Veces que muto: " + this.estado.getCantMutaciones() + " / " + this.estado.getCorridas()));
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe(Reporte.enmarcar("Individuo Campeon: " + this.estado.getMejorIndividuo()));
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).severe(Reporte.enmarcar("Peor Individuo: " + this.estado.getPeorIndividuo()));
 	}
 }

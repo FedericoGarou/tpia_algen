@@ -2,6 +2,7 @@ package main.java.ar.edu.utn.frba.ia.ag.triatlon.atleta;
 
 import main.java.ar.edu.utn.frba.ia.ag.Individuo;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.ParametrosValoracion;
+import main.java.ar.edu.utn.frba.ia.ag.triatlon.algoritmo.Reporte;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadCarreraPie;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadCiclismo;
 import main.java.ar.edu.utn.frba.ia.ag.triatlon.caracteristica.CapacidadNatacion;
@@ -131,7 +132,7 @@ public class Atleta<main> extends Individuo {
      * FACTOR = SUELDO_MAXIMO / COSTO_NORMALIZADO_MAXIMO = 1.5
      */
     private double sueldoAnualEnDolares() {
-        return this.costoAtleta()* ParametrosValoracion.FACTOR_CONVERSION_SALARIO;
+        return this.costoAtleta()* ParametrosValoracion.factorConversion();
     }
 
     public List<Caracteristica> getCaracterísticas() {
@@ -151,6 +152,6 @@ public class Atleta<main> extends Individuo {
     }
 
     public String aptitudSobreIdeal() {
-        return String.format("Aptitud respecto al ideal: %2.2f%% de coincidencia con el ideal %n", this.aptitud()/ParametrosValoracion.maximoAptitud()*100);
+        return String.format("Aptitud respecto al ideal: %2.2f%% de coincidencia con el ideal %n" , this.aptitud()/ParametrosValoracion.maximoAptitud()*100);
     }
 }
